@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
     "declaration": true,
-    "declarationDir": "build",
+    "declarationDir": "dist",
     "module": "esnext",
     "target": "es5",
     "lib": [
@@ -16,12 +17,21 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
+  "typesRoot": [
+    "/node_modules/@types",
+    "src/types"
+  ],
+  "types": [
+    "react",
+    "react-native"
+  ],
   "include": [
     "src/**/*"
   ],
   "exclude": [
     "node_modules",
-    "build",
-    "src/**/*.stories.tsx"
+    "dist",
+    "src/**/*.stories.tsx",
+    "src/themes/**/*"
   ]
 }
