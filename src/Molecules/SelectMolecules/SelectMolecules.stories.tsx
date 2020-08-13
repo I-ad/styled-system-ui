@@ -13,7 +13,10 @@ export const Select: React.FC = () => {
   return (
     <BoxAtom bg="backgrounds.0.color" p={60}>
       <SelectMolecules
-        floatingLabel="Select Label"
+        floatingLabelProps={{
+          label: "Select Label",
+        }}
+        width={600}
         variant="input"
         value={value}
         onChange={onChange}

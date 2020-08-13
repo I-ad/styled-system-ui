@@ -12,11 +12,8 @@ const InputsWrapper: React.FC<InputWrapper> = ({
   value,
   onFocus,
   onBlur,
-  floatingLabel,
-  labelBackground,
   children,
-  labelVariant,
-  ...props
+  floatingLabelProps,
 }: InputWrapper) => {
   const [isActive, setIsActive] = useState(!!value);
   const [isFocus, setFocus] = useState(false);
@@ -53,7 +50,7 @@ const InputsWrapper: React.FC<InputWrapper> = ({
   };
 
   return (
-    <BoxAtom {...props.wrapperProps} position="relative">
+    <BoxAtom position="relative" display="inline-block">
       {leftIcon && <IconContainer>{leftIcon}</IconContainer>}
       <RightIcons
         rightIcon={rightIcon}
@@ -61,13 +58,14 @@ const InputsWrapper: React.FC<InputWrapper> = ({
         ClearButton={ClearButton}
         value={value}
       />
-      {floatingLabel && (
+      {floatingLabelProps && (
         <FloatingLabel
           isActive={isActive}
           left={paddingLeft}
-          label={floatingLabel}
-          labelBackground={labelBackground}
-          labelVariant={labelVariant}
+          label={floatingLabelProps.label}
+          labelBackground={floatingLabelProps.barBackground}
+          labelVariant={floatingLabelProps.variant}
+          barWidth={floatingLabelProps.barWidth}
         />
       )}
       {React.Children.map(children, (child: any) =>

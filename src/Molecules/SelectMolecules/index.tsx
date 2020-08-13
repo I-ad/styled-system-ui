@@ -5,8 +5,7 @@ import SelectAtom from "../../Atoms/SelectAtom";
 import { IconAtom } from "../../Atoms/IconAtom";
 
 const SelectMolecules: React.FC<SelectMoleculesType> = ({
-  floatingLabel,
-  wrapperProps,
+  floatingLabelProps,
   leftIcon,
   loading,
   ClearButton,
@@ -16,11 +15,10 @@ const SelectMolecules: React.FC<SelectMoleculesType> = ({
   const RightIcon = <IconAtom name="SelectArrowIcon" color="checked" />;
   return (
     <InputsWrapper
+      floatingLabelProps={floatingLabelProps}
       value={value}
-      floatingLabel={floatingLabel}
       leftIcon={leftIcon}
       loading={loading}
-      wrapperProps={wrapperProps}
       ClearButton={ClearButton}
       rightIcon={RightIcon}
     >

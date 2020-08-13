@@ -4,7 +4,7 @@ import Base from "./base";
 const forms = (Colors: ITheme["colors"]): any => ({
   input: {
     height: Base.sizes.large,
-    background: Colors.backgroundBody,
+    background: "transparent",
     borderRadius: Base.radii[1],
     border: `1px solid ${Colors.borderFirst}`,
     paddingLeft: Base.space[3],
@@ -14,7 +14,7 @@ const forms = (Colors: ITheme["colors"]): any => ({
     fontWeight: Base.fontWeights.normal,
     fontFamily: Base.fonts.normal,
     "&:focus": {
-      border: `1px solid ${Colors.focus}`,
+      border: `2px solid ${Colors.focus}`,
     },
     "&::placeholder": {
       color: Colors.textSecond,

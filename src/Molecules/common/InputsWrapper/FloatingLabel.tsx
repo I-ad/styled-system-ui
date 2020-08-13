@@ -1,9 +1,9 @@
+import { themeGet } from "@styled-system/theme-get";
 import React, { useContext } from "react";
 import { animated, config, useSpring } from "react-spring";
-import TextAtom from "../../../Atoms/TextAtom";
-import { BoxAtom } from "../../../Atoms/BoxAtom";
 import { ThemeContext } from "styled-components";
-import { themeGet } from "@styled-system/theme-get";
+import { BoxAtom } from "../../../Atoms/BoxAtom";
+import TextAtom from "../../../Atoms/TextAtom";
 
 interface IProps {
   isActive: boolean;
@@ -11,6 +11,7 @@ interface IProps {
   label?: string;
   labelBackground?: string;
   labelVariant?: string;
+  barWidth?: number | string;
 }
 
 const FloatingLabel: React.FC<IProps> = ({
@@ -19,46 +20,52 @@ const FloatingLabel: React.FC<IProps> = ({
   label,
   labelBackground,
   labelVariant = "label",
+  barWidth = 3,
 }: IProps) => {
   const theme = useContext(ThemeContext);
   const bg = themeGet(
     labelBackground ? `colors.${labelBackground}` : "colors.backgroundBody",
-    "#fff",
+    null,
   )({ theme });
-  const translate = `translate(${isActive ? "12px" : left + "px"}, -50%`;
-  const scale = `scale(${isActive ? 0.75 : 1})`;
+  const translate = `translate(${isActive ? "12px" : `${left}px`}, -50%)`;
+  const scale = `scale(${isActive ? 0.85 : 1})`;
   const labelSprings = useSpring({
     transform: `${scale} ${translate}`,
     top: isActive ? "0%" : "50%",
+    paddingLeft: isActive ? 8 : 0,
+    paddingRight: isActive ? 8 : 0,
     transformOrigin: "top left",
     config: { duration: 160, ...config.wobbly },
   });
   return (
     <animated.div
+      data-testid="label-wrapper-test-id"
       style={{
         pointerEvents: "none",
         position: "absolute",
         left: 0,
         ...labelSprings,
-        zIndex: isActive ? 1 : 0,
+        zIndex: 1,
       }}
     >
       <TextAtom
+        position="relative"
         as="label"
         variant={labelVariant}
-        pl={isActive ? "8px" : "0px"}
-        pr={isActive ? "8px" : "0px"}
+        zIndex={3}
       >
         {label}
       </TextAtom>
       {isActive && (
         <BoxAtom
-          width="100%"
-          height="50%"
-          backgroundColor={bg}
+          top={"49.5%"}
+          width="auto"
+          left={0}
+          right={0}
+          borderTop={`${barWidth}px solid`}
+          borderColor={bg || labelBackground || "#FFF"}
           position="absolute"
-          top="49%"
-          zIndex={-1}
+          zIndex={2}
         />
       )}
     </animated.div>

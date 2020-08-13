@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import { BoxAtom } from "../../../Atoms/BoxAtom";
 import { IconAtom, IconButtonAtom } from "../../../Atoms/IconAtom";
-import LoadingComponent from "./LoadingComponent";
 
 export const RightIconHolder = React.memo(({ children }: { children: any }) => (
   <BoxAtom
@@ -67,7 +66,7 @@ export const RightIcons: React.FC<RightIconsProps> = React.memo(
         )}
         {loading && (
           <RightIconHolder>
-            <LoadingComponent />
+            <IconAtom name="LoadingIcon" />
           </RightIconHolder>
         )}
         {rightIcon && <RightIconHolder>{rightIcon}</RightIconHolder>}

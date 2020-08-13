@@ -40,7 +40,7 @@ const textStyles = (Colors: ITheme["colors"]): any => {
     },
     label: {
       color: Colors.textFirst,
-      fontSize: Base.fontSizes[1],
+      fontSize: Base.fontSizes[2],
       fontWeight: Base.fontWeights.normal,
       fontFamily: Base.fonts.normal,
     },

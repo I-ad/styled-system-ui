@@ -9,7 +9,7 @@ export default {
   title: "Molecules/Input",
 };
 
-export const Input = () => {
+export const Input = (): any => {
   const [value, setValue] = useState("Value");
   const [type, setType] = useState("text");
   const toggleType = () => setType((x) => (x === "text" ? "password" : "text"));
@@ -26,10 +26,14 @@ export const Input = () => {
     />
   );
   return (
-    <BoxAtom bg="backgroundBody" p={60}>
+    <BoxAtom bg="#f1f1f1" p={60}>
       <InputMolecules
+        floatingLabelProps={{
+          label: "Label",
+          barBackground: "#f1f1f1",
+        }}
+        width={800}
         type={type}
-        floatingLabel="Label"
         variant="input"
         value={value}
         onChange={onChange}

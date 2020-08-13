@@ -1,11 +1,11 @@
 import { cleanup, render } from "@testing-library/react";
+import "jest-styled-components";
 import * as React from "react";
 import BoxAtom from "./index";
-import "jest-styled-components";
 
 afterEach(cleanup);
 
-it("should Render BoxAtom", () => {
+it("should match snapshot", () => {
   const { asFragment } = render(<BoxAtom width={200} height={200} bg="red" />);
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>

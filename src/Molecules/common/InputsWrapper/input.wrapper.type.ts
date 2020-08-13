@@ -1,14 +1,15 @@
-import { BoxAtomType } from "../../../Atoms/BoxAtom/boxAtomType";
 import { ReactNode } from "react";
 
 export interface InputWrapperBaseType {
-  floatingLabel?: string;
-  wrapperProps?: BoxAtomType;
   leftIcon?: ReactNode;
   loading?: boolean;
   ClearButton?: ReactNode;
-  labelBackground?: string;
-  labelVariant?: string;
+  floatingLabelProps?: {
+    label: string;
+    barWidth?: number;
+    variant?: string;
+    barBackground?: string;
+  };
 }
 
 export interface InputWrapper extends InputWrapperBaseType {

@@ -34,10 +34,6 @@ interface BaseType {
   zIndices: number[];
 }
 
-interface IColors {
-  primaryBackground: string;
-}
-
 export interface ThemeType<T extends any> extends BaseType {
   name?: string;
   colors: T;
@@ -46,3 +42,10 @@ export interface ThemeType<T extends any> extends BaseType {
   text: { [key: string]: any };
   forms?: { [key: string]: any };
 }
+
+// background color
+// text Color
+// element background
+// icon Color
+// border Color
+// focus Color

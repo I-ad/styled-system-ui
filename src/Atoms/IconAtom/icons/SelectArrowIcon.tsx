@@ -5,7 +5,7 @@ const SelectArrowIcon: React.FC<IconType> = ({
   color = "#000",
   width = 24,
 }: IconType) => (
-  <svg width={width} height={width} viewBox="0 0 24">
+  <svg width={width} height={width} viewBox="0 0 24 24">
     <g fill="none" fillRule="evenodd">
       <rect fill="none" fillRule="nonzero" width={24} height={24} rx={1} />
       <path

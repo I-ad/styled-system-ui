@@ -4,28 +4,58 @@ import InputAtom from "../../Atoms/InputAtom";
 import { InputMoleculesType } from "./input.molecules.type";
 
 const InputMolecules: React.FC<InputMoleculesType> = ({
-  floatingLabel,
-  wrapperProps,
   leftIcon,
   rightIcon,
   loading,
   ClearButton,
+  floatingLabelProps,
   value,
-  labelBackground,
   ...props
 }: InputMoleculesType) => {
   return (
     <InputsWrapper
       value={value}
-      floatingLabel={floatingLabel}
+      floatingLabelProps={floatingLabelProps}
       leftIcon={leftIcon}
       rightIcon={rightIcon}
       loading={loading}
-      wrapperProps={wrapperProps}
       ClearButton={ClearButton}
-      labelBackground={labelBackground}
     >
-      <InputAtom {...props} value={value} width="100%" />
+      <InputAtom
+        data-testid="input-molecules-test-id"
+        width={400}
+        height={50}
+        {...props}
+        value={value}
+        m={null}
+        margin={null}
+        mt={null}
+        marginTop={null}
+        mr={null}
+        marginRight={null}
+        mb={null}
+        marginBottom={null}
+        ml={null}
+        marginLeft={null}
+        mx={null}
+        marginX={null}
+        my={null}
+        marginY={null}
+        p={null}
+        padding={null}
+        pt={null}
+        paddingTop={null}
+        pr={null}
+        paddingRight={null}
+        pb={null}
+        paddingBottom={null}
+        pl={null}
+        paddingLeft={null}
+        px={null}
+        paddingX={null}
+        py={null}
+        paddingY={null}
+      />
     </InputsWrapper>
   );
 };

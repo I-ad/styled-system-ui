@@ -1,5 +1,5 @@
 import React from "react";
-import { animated, useSpring } from "react-spring/web";
+import { animated, useSpring } from "react-spring";
 import { IconAtom } from "../../../Atoms/IconAtom";
 
 const LoadingComponent: React.FC = () => {
