@@ -1,7 +1,7 @@
 import React from "react";
 import InputsWrapper from "../common/InputsWrapper";
 import InputAtom from "../../Atoms/InputAtom";
-import { InputMoleculesType } from "./input.molecules.type";
+import { InputMoleculesType } from "./inputMoleculesType";
 
 const InputMolecules: React.FC<InputMoleculesType> = ({
   leftIcon,
