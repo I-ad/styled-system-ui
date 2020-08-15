@@ -10,10 +10,14 @@ export interface InputWrapperBaseType {
     variant?: string;
     barBackground?: string;
   };
+  errorMessage?: string;
+  helpMessage?: string;
+  suggestions?: ReactNode;
+  themeKey?: string;
 }
 
 export interface InputWrapper extends InputWrapperBaseType {
-  children: any;
+  children: ReactNode;
   value?: string | number | readonly string[];
   rightIcon?: ReactNode;
   onFocus?(e: any): void;

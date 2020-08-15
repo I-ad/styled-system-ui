@@ -1,0 +1,28 @@
+export default {
+  fontSizes: [14, 16, 24, 32],
+  sizes: {
+    extraSmall: 24,
+    small: 32,
+    medium: 48,
+    large: 64,
+    extraLarge: 80,
+  },
+  space: [0, 4, 10, 20, 30, 40],
+  lineHeights: ["24px", "40px", "48px"],
+  fontWeights: {
+    extraBlack: 950,
+    black: 900,
+    extraBold: 800,
+    bold: 700,
+    semiBold: 600,
+    medium: 500,
+    normal: 400,
+    semiLight: 350,
+    light: 300,
+    extraLight: 200,
+    thin: 100,
+  },
+  borders: [0, "1px solid"],
+  radii: [0, 4],
+  shadows: [],
+};

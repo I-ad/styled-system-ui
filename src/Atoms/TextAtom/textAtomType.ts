@@ -24,6 +24,7 @@ interface IStyled
     TypographyProps,
     TextStyleProps {
   variant?: ResponsiveValue<string>;
+  themeKey?: string;
   as?: string;
 }
 

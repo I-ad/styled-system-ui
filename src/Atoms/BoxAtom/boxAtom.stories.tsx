@@ -6,7 +6,7 @@ export default {
 };
 
 export const Box: React.FunctionComponent = () => (
-  <BoxAtom p={60} bg="primaryFirst">
-    <BoxAtom width={400} height={400} bg="backgroundBody" />
+  <BoxAtom p={60} bg="backgroundBody">
+    <BoxAtom width={200} height={200} bg="primaryFirst" />
   </BoxAtom>
 );

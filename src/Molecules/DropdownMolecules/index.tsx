@@ -7,6 +7,8 @@ const DropdownMolecules: React.FC<DropdownMoleculesType> = ({
   title,
   subtitle,
   avatar,
+  options,
+  themeKey = "dropdownStyle",
 }: DropdownMoleculesType) => {
   const [show, setShow] = useState(false);
   const toggleList = () => {
@@ -17,14 +19,14 @@ const DropdownMolecules: React.FC<DropdownMoleculesType> = ({
   return (
     <BoxAtom ref={REF} position="relative" display="inline-block">
       <ButtonAtom
-        bg="#FFF"
-        position="relative"
+        themeKey={themeKey}
+        variant="dropdown"
         minWidth={600}
         minHeight={50}
-        height={80}
         display="inline-block"
         onClick={toggleList}
-        p={20}
+        position="relative"
+        variantStatus={show && !!options ? "dropdownOpen" : ""}
       >
         <BoxAtom
           width="100%"
@@ -40,15 +42,12 @@ const DropdownMolecules: React.FC<DropdownMoleculesType> = ({
             overflow="hidden"
             ml="20px"
           >
-            <TextAtom variant={title.variant || "dropdownTitle"} fontSize={14}>
-              {title.text}
+            <TextAtom themeKey={themeKey} variant={"title"} fontSize={14}>
+              {title}
             </TextAtom>
             {!!subtitle && (
-              <TextAtom
-                variant={subtitle.variant || "dropdownSubtitle"}
-                fontSize={12}
-              >
-                {subtitle.text}
+              <TextAtom themeKey={themeKey} variant={"subtitle"} fontSize={12}>
+                {subtitle}
               </TextAtom>
             )}
           </BoxAtom>
@@ -58,16 +57,21 @@ const DropdownMolecules: React.FC<DropdownMoleculesType> = ({
           />
         </BoxAtom>
       </ButtonAtom>
-      <BoxAtom
-        style={{ visibility: show ? "visible" : "hidden" }}
-        width="100%"
-        height={500}
-        bg="#FFF"
-        position="absolute"
-        top="101%"
-        onClick={toggleList}
-        zIndex={999}
-      />
+      {options && (
+        <BoxAtom
+          themeKey={themeKey}
+          variant="dropdownOptionsWrapper"
+          width="100%"
+          height="auto"
+          position="absolute"
+          top="101%"
+          onClick={toggleList}
+          zIndex={999}
+          style={{ visibility: show ? "visible" : "hidden" }}
+        >
+          {options}
+        </BoxAtom>
+      )}
     </BoxAtom>
   );
 };

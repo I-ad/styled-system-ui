@@ -6,6 +6,6 @@ import { Omit } from "../../types/common";
 
 export interface InputMoleculesType
   extends InputWrapperBaseType,
-    Omit<InputAtomType, keyof SpaceProps> {
+    Omit<Omit<InputAtomType, keyof SpaceProps>, "variantStatus"> {
   rightIcon?: ReactNode;
 }

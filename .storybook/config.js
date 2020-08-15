@@ -1,11 +1,10 @@
-import { addDecorator } from "@storybook/react";
+import { addDecorator, addParameters } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
 import { withKnobs } from "@storybook/addon-knobs";
-import { addParameters } from "@storybook/react";
 import { withThemesProvider } from "storybook-addon-styled-component-theme";
-import { lightTheme, airbnbTheme, darkTheme } from "../src/themes";
+import { dayTheme, nightTheme } from "../src/themes/themei";
 
-const themes = [lightTheme, darkTheme, airbnbTheme];
+const themes = [dayTheme, nightTheme];
 
 addDecorator(withInfo);
 addDecorator(withKnobs);

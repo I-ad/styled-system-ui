@@ -21,8 +21,7 @@ interface IStyled
     ShadowProps,
     SpaceProps {
   variant?: ResponsiveValue<string>;
-  variantStatus?: ResponsiveValue<string>;
-  hasError?: boolean;
+  themeKey?: string;
 }
 
 export interface SelectAtomType

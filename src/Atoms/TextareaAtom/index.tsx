@@ -16,12 +16,12 @@ import { TextareaAtomType } from "./textareaAtomType";
 const TextareaStyled: React.FunctionComponent<TextareaAtomType> = styled.textarea`
   appearance: none;
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
-  border: none;
-  ${variant({ prop: "variant", key: "forms" })};
+  border: 1px solid #000;
+  padding: 0 10px;
+  ${({ themeKey = "forms" }: TextareaAtomType) =>
+    variant({ prop: "variant", key: themeKey })};
   ${compose(border, color, space, layout, flexbox, position, shadow)};
-  ${variant({ prop: "variantSecond", key: "forms" })};
   outline: none;
 `;
 

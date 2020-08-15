@@ -1,12 +1,12 @@
 import React, { ReactNode } from "react";
 import { BoxAtom } from "../../../Atoms/BoxAtom";
-import { IconAtom, IconButtonAtom } from "../../../Atoms/IconAtom";
+import { IconAtom } from "../../../Atoms/IconAtom";
 
 export const RightIconHolder = React.memo(({ children }: { children: any }) => (
   <BoxAtom
     width={24}
     height={24}
-    mr={8}
+    mr={"8px"}
     maxHeight={24}
     maxWidth={24}
     display="flex"
@@ -29,8 +29,8 @@ export const IconContainer: React.FC<IProps> = React.memo(
     return (
       <BoxAtom
         position="absolute"
-        left={isRight ? "auto" : 16}
-        right={isRight ? 8 : "auto"}
+        left={isRight ? "auto" : "16px"}
+        right={isRight ? "8px" : "auto"}
         top="50%"
         style={{ transform: "translateY(-50%)", pointerEvents: "none" }}
         maxHeight={isRight ? "auto" : 24}

@@ -22,7 +22,7 @@ const SelectMolecules: React.FC<SelectMoleculesType> = ({
       ClearButton={ClearButton}
       rightIcon={RightIcon}
     >
-      <SelectAtom {...props} value={value} width="100%" />
+      <SelectAtom {...props} value={value} style={{ appearance: "none" }} />
     </InputsWrapper>
   );
 };

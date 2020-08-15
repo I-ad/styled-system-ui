@@ -27,10 +27,12 @@ const ButtonStyled: React.FunctionComponent<ButtonAtomType> = styled.button`
   border: 0;
   cursor: pointer;
   padding: 0;
-  background: none;
   box-sizing: border-box;
   pointer-events: auto;
-  ${variant({ prop: "variant", key: "buttons" })};
+  ${({ themeKey = "buttons" }: ButtonAtomType) =>
+    variant({ prop: "variant", key: themeKey })};
+  ${({ themeKey = "buttons" }: ButtonAtomType) =>
+    variant({ prop: "variantStatus", key: themeKey })};
   ${compose(
     buttonStyle,
     colorStyle,

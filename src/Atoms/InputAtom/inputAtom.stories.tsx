@@ -11,8 +11,9 @@ export const Input: React.FunctionComponent = () => {
   return (
     <BoxAtom p={40} bg="backgroundBody">
       <InputAtom
-        variant={select("Variant", ["", "input", "search"], "input")}
+        variant={select("Variant", ["", "inputStyle"], "input")}
         disabled={boolean("Disabled", false)}
+        autoFocus={true}
       />
     </BoxAtom>
   );

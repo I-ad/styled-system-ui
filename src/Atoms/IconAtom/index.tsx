@@ -14,12 +14,12 @@ export { IconsBucket };
 
 const useThemeColors = (color?: string): string => {
   const theme = React.useContext(ThemeContext);
-  return themeGet(`colors.${color}`, null)({ theme });
+  return themeGet(`colors.${color}`, "#000")({ theme });
 };
 
 export const IconAtom: React.FC<IconAtomType> = ({
   name,
-  color = "iconsFirst",
+  color = "iconFirst",
   width = 24,
 }: IconAtomType) => {
   const iconColor = useThemeColors(color);
@@ -33,7 +33,7 @@ IconAtom.displayName = "IconAtom";
 
 export const IconWrapperAtom: React.FC<IconWrapperAtomType> = ({
   name,
-  color = "iconsFirst",
+  color = "iconFirst",
   width = 24,
   wrapperProps,
 }: IconWrapperAtomType) => {
@@ -59,7 +59,7 @@ IconWrapperAtom.displayName = "IconWrapperAtom";
 
 export const IconButtonAtom: React.FunctionComponent<IconButtonAtomType> = ({
   name,
-  color = "iconsFirst",
+  color = "iconFirst",
   width = 24,
   buttonProps,
 }: IconButtonAtomType) => {
@@ -73,7 +73,8 @@ export const IconButtonAtom: React.FunctionComponent<IconButtonAtomType> = ({
   };
   return (
     <ButtonAtom
-      borderRadius="4"
+      borderRadius="100%"
+      bg="none"
       {...buttonProps}
       tabIndex={-1}
       onMouseDown={onMouseDown}

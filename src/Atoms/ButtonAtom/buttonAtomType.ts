@@ -5,6 +5,7 @@ import {
   FlexboxProps,
   LayoutProps,
   PositionProps,
+  ResponsiveValue,
   ShadowProps,
   SpaceProps,
   TypographyProps,
@@ -12,7 +13,9 @@ import {
 import { Omit } from "../../types/common";
 
 interface BaseProps extends React.RefAttributes<HTMLButtonElement> {
-  variant?: string;
+  variant?: ResponsiveValue<string>;
+  variantStatus?: ResponsiveValue<string>;
+  themeKey?: string;
 }
 
 interface IStyled

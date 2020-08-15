@@ -14,12 +14,14 @@ import {
 import { SelectAtomType } from "./selectAtomType";
 
 const SelectStyled: React.FunctionComponent<SelectAtomType> = styled.select`
-  appearance: none;
-  border: 0 solid;
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
-  ${variant({ prop: "variant", key: "forms" })};
+  width: 300px;
+  height: 50px;
+  border: 1px solid #000;
+  padding: 0 10px;
+  ${({ themeKey = "forms" }: SelectAtomType) =>
+    variant({ prop: "variant", key: themeKey })};
   ${compose(border, color, space, layout, flexbox, position, shadow)};
   outline: none;
 `;

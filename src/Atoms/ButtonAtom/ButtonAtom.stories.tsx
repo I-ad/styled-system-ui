@@ -10,11 +10,8 @@ export default {
 export const Button: React.FunctionComponent = () => (
   <BoxAtom bg="backgroundBody" p={60}>
     <ButtonAtom
-      variant={select(
-        "Variant",
-        ["primary", "secondary", "textButton"],
-        "primary",
-      )}
+      width={400}
+      variant={select("Variant", ["", "primary", "secondary"], "primary")}
     >
       Click me
     </ButtonAtom>

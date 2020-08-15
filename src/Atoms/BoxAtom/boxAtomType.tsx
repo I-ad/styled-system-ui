@@ -19,6 +19,7 @@ import { Omit } from "../../types/common";
 
 interface IBase extends React.RefAttributes<HTMLDivElement> {
   variant?: ResponsiveValue<string>;
+  themeKey?: string;
 }
 
 interface IStyled

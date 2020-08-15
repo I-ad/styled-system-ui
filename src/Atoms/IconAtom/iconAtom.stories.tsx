@@ -13,7 +13,7 @@ export const Icons = (): any => {
     <BoxAtom p={40} display="flex" flexDirection="row" flexWrap="wrap">
       {keys.map((icon) => (
         <BoxAtom key={icon} m={60} textAlign="center">
-          <IconAtom name={icon} color="#000" />
+          <IconAtom name={icon} />
           <TextAtom mt={8}>{icon}</TextAtom>
         </BoxAtom>
       ))}

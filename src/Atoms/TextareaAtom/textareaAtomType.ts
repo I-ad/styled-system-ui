@@ -13,8 +13,7 @@ import { Omit } from "../../types/common";
 
 interface Base extends React.RefAttributes<HTMLTextAreaElement> {
   variant?: ResponsiveValue<string>;
-  variantStatus?: ResponsiveValue<string>;
-  hasError?: boolean;
+  themeKey?: string;
 }
 
 interface IStyled

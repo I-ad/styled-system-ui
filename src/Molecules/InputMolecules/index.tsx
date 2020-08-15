@@ -1,6 +1,6 @@
 import React from "react";
-import InputsWrapper from "../common/InputsWrapper";
 import InputAtom from "../../Atoms/InputAtom";
+import InputsWrapper from "../common/InputsWrapper";
 import { InputMoleculesType } from "./inputMoleculesType";
 
 const InputMolecules: React.FC<InputMoleculesType> = ({
@@ -9,7 +9,10 @@ const InputMolecules: React.FC<InputMoleculesType> = ({
   loading,
   ClearButton,
   floatingLabelProps,
+  errorMessage,
+  helpMessage,
   value,
+  suggestions,
   ...props
 }: InputMoleculesType) => {
   return (
@@ -20,11 +23,12 @@ const InputMolecules: React.FC<InputMoleculesType> = ({
       rightIcon={rightIcon}
       loading={loading}
       ClearButton={ClearButton}
+      errorMessage={errorMessage}
+      helpMessage={helpMessage}
+      suggestions={suggestions}
     >
       <InputAtom
         data-testid="input-molecules-test-id"
-        width={400}
-        height={50}
         {...props}
         value={value}
         m={null}

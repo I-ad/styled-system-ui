@@ -49,3 +49,14 @@ export interface ThemeType<T extends any> extends BaseType {
 // icon Color
 // border Color
 // focus Color
+
+type B = { [key: string]: any };
+
+interface ITheme extends B {
+  colors: any;
+}
+
+const C: ITheme = {
+  colors: [],
+  inputs: {},
+};

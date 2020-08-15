@@ -19,9 +19,9 @@ const BoxStyled: React.FunctionComponent<BoxAtomType> = styled.div`
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  ${variant({ prop: "variant", key: "box" })};
+  ${({ themeKey = "box" }: BoxAtomType) =>
+    variant({ prop: "variant", key: themeKey })};
   ${compose(
-    border,
     color,
     space,
     flexbox,
@@ -30,6 +30,7 @@ const BoxStyled: React.FunctionComponent<BoxAtomType> = styled.div`
     shadow,
     typography,
     grid,
+    border,
   )};
 `;
 

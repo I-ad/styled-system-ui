@@ -14,7 +14,7 @@ import { Omit } from "../../types/common";
 interface Base extends React.RefAttributes<HTMLInputElement> {
   variant?: ResponsiveValue<string>;
   variantStatus?: ResponsiveValue<string>;
-  hasError?: boolean;
+  themeKey?: string;
 }
 
 interface IStyled
@@ -29,6 +29,4 @@ interface IStyled
 
 export interface InputAtomType
   extends IStyled,
-    Omit<React.HTMLProps<HTMLInputElement>, keyof IStyled> {
-  hasError?: boolean;
-}
+    Omit<React.HTMLProps<HTMLInputElement>, keyof IStyled> {}

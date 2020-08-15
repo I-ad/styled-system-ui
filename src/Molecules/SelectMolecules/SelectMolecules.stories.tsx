@@ -16,7 +16,6 @@ export const Select: React.FC = () => {
         floatingLabelProps={{
           label: "Select Label",
         }}
-        width={600}
         variant="input"
         value={value}
         onChange={onChange}

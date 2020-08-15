@@ -18,7 +18,8 @@ const TextAtom: React.FunctionComponent<TextAtomType> = styled.p`
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  ${variant({ prop: "variant", key: "text" })};
+  ${({ themeKey = "text" }: TextAtomType) =>
+    variant({ prop: "variant", key: themeKey })};
   ${compose(
     textStyle,
     color,

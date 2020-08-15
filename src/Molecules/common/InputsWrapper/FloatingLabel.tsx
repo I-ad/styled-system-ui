@@ -1,7 +1,5 @@
-import { themeGet } from "@styled-system/theme-get";
-import React, { useContext } from "react";
+import React from "react";
 import { animated, config, useSpring } from "react-spring";
-import { ThemeContext } from "styled-components";
 import { BoxAtom } from "../../../Atoms/BoxAtom";
 import TextAtom from "../../../Atoms/TextAtom";
 
@@ -12,21 +10,17 @@ interface IProps {
   labelBackground?: string;
   labelVariant?: string;
   barWidth?: number | string;
+  themeKey?: string;
 }
 
 const FloatingLabel: React.FC<IProps> = ({
   isActive,
   left,
   label,
-  labelBackground,
   labelVariant = "label",
   barWidth = 3,
+  themeKey,
 }: IProps) => {
-  const theme = useContext(ThemeContext);
-  const bg = themeGet(
-    labelBackground ? `colors.${labelBackground}` : "colors.backgroundBody",
-    null,
-  )({ theme });
   const translate = `translate(${isActive ? "12px" : `${left}px`}, -50%)`;
   const scale = `scale(${isActive ? 0.85 : 1})`;
   const labelSprings = useSpring({
@@ -49,21 +43,22 @@ const FloatingLabel: React.FC<IProps> = ({
       }}
     >
       <TextAtom
+        themeKey={themeKey}
         position="relative"
         as="label"
-        variant={labelVariant}
+        variant="label"
         zIndex={3}
       >
         {label}
       </TextAtom>
       {isActive && (
         <BoxAtom
+          themeKey={themeKey}
+          variant="labelBar"
           top={"49.5%"}
           width="auto"
           left={0}
           right={0}
-          borderTop={`${barWidth}px solid`}
-          borderColor={bg || labelBackground || "#FFF"}
           position="absolute"
           zIndex={2}
         />
